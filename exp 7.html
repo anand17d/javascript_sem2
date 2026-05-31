@@ -1,0 +1,40 @@
+import React from 'react' 
+function Student(props) { 
+  return ( 
+    <div  className="Student-info"> 
+        <h2> Name:{props.name}</h2> 
+        <p> Course:{props.course}</p> 
+        <p> Marks:{props.marks}</p> 
+    </div> 
+  ) 
+} 
+ 
+export default Student 
+ import './App.css' 
+import Student from './Student' 
+ 
+function App() { 
+ 
+  return ( 
+    <> 
+      <h2>Student Information</h2> 
+ 
+      <Student name="Raj" course="B.tech" marks="90" /> 
+      <Student name="Ram" course="M.tech" marks="95" /> 
+      <Student name="Rohan" course="MCA" marks="99" /> 
+    </> 
+  ) 
+} 
+ 
+export default App 
+ .Student-info{ 
+  background-color:green; 
+  color: black; 
+  width: 100px; 
+  margin: 40px auto; 
+  padding: 50px; 
+} 
+ 
+ 
+ 
+ 
