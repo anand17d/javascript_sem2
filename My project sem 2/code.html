@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechShop - Online Shopping Web Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav class="nav-container">
+            <a href="#home" class="logo">Tech<span>Shop</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li>
+                    <a href="#cart" class="cart-link">
+                        Cart <span class="cart-badge" id="cart-count">0</span>
+                    </a>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="hero-label">Modern Gadgets. Smart Prices.</p>
+                <h1>Latest Tech Products at Best Prices</h1>
+                <p>
+                    Discover premium smartphones, laptops, cameras, wearables, and accessories
+                    selected for students, professionals, and tech lovers.
+                </p>
+                <a href="#products" class="hero-btn">Shop Now</a>
+            </div>
+        </section>
+
+        <section id="products" class="section products-section">
+            <div class="section-title">
+                <p>Featured Products</p>
+                <h2>Shop Our Latest Collection</h2>
+            </div>
+
+            <div class="products-grid">
+                <article class="product-card">
+                    <img src="https://tiimg.tistatic.com/fp/2/007/716/6-10-inch-full-hd-display-128gb-internal-memory-a15-bionic-processor-pink-apple-iphone-13-mobile-phone--569.jpg" alt="Smartphone">
+                    <div class="product-info">
+                        <h3>Smartphone</h3>
+                        <p class="price">₹69,999</p>
+                        <p>Powerful 5G smartphone with bright display and excellent battery life.</p>
+                        <button class="add-cart-btn" data-name="Smartphone" data-price="29999">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=80" alt="Laptop">
+                    <div class="product-info">
+                        <h3>Laptop</h3>
+                        <p class="price">₹59,999</p>
+                        <p>High-performance laptop for coding, designing, studying, and multitasking.</p>
+                        <button class="add-cart-btn" data-name="Laptop" data-price="59999">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=80" alt="Headphones">
+                    <div class="product-info">
+                        <h3>Headphones</h3>
+                        <p class="price">₹2,999</p>
+                        <p>Comfortable wireless headphones with rich sound and deep bass.</p>
+                        <button class="add-cart-btn" data-name="Headphones" data-price="2999">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80" alt="Smart Watch">
+                    <div class="product-info">
+                        <h3>Smart Watch</h3>
+                        <p class="price">₹4,999</p>
+                        <p>Stylish smart watch with fitness tracking and notification features.</p>
+                        <button class="add-cart-btn" data-name="Smart Watch" data-price="4999">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=700&q=80" alt="Camera">
+                    <div class="product-info">
+                        <h3>Camera</h3>
+                        <p class="price">₹24,999</p>
+                        <p>Capture sharp photos and videos with a compact digital camera.</p>
+                        <button class="add-cart-btn" data-name="Camera" data-price="24999">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=700&q=80" alt="Bluetooth Speaker">
+                    <div class="product-info">
+                        <h3>Bluetooth Speaker</h3>
+                        <p class="price">₹1,999</p>
+                        <p>Portable speaker with clear audio, strong bass, and battery backup.</p>
+                        <button class="add-cart-btn" data-name="Bluetooth Speaker" data-price="1999">Add to Cart</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="cart" class="section cart-section">
+            <div class="section-title">
+                <p>Shopping Cart</p>
+                <h2>Your Selected Products</h2>
+            </div>
+
+            <div class="cart-card">
+                <div class="cart-header">
+                    <h3>Cart Items</h3>
+                    <span class="cart-icon">Cart: <strong id="cart-header-count">0</strong></span>
+                </div>
+
+                <div id="cart-items" class="cart-items">
+                    <p class="empty-cart">Your cart is empty. Add products to see them here.</p>
+                </div>
+
+                <div class="cart-summary">
+                    <p>Total Items: <strong id="total-items">0</strong></p>
+                    <p>Total Price: <strong id="total-price">₹0</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="section-title">
+                <p>Contact Us</p>
+                <h2>Have a Question?</h2>
+            </div>
+
+            <form class="contact-card" id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <h3>TechShop</h3>
+                <p>&copy; 2026 TechShop. All rights reserved.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#cart">Cart</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="#">f</a>
+                <a href="#">x</a>
+                <a href="#">in</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
