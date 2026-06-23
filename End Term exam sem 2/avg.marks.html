@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result Calculator</title>
+
+<style>
+    body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#6a11cb,#66fc25);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    width:400px;
+    padding:30px;
+    background:white;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+h2{
+    color:#3025fc;
+}
+
+input{
+    width:80%;
+    padding:10px;
+    margin:10px 0;
+    border:2px solid #2575fc;
+    border-radius:8px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    color:white;
+    cursor:pointer;
+    background:linear-gradient(45deg,#ff2f36,#dd2476);
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#result{
+    margin-top:20px;
+    padding:15px;
+    background:#f4f4f4;
+    border-radius:10px;
+    line-height:1.8;
+}
+
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🎓 Student Result Calculator</h2>
+
+        <label>Enter Number of Subjects</label><br>
+        <input type="number" id="subjects" min="1"><br>
+
+        <button onclick="calculateResult()">Calculate Result</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateResult() {
+
+            let n = parseInt(document.getElementById("subjects").value);
+
+            if (!n || n <= 0) {
+                alert("Please enter a valid number of subjects");
+                return;
+            }
+
+            let total = 0;
+
+            for (let i = 1; i <= n; i++) {
+                let marks = parseFloat(
+                    prompt("Enter marks of Subject " + i)
+                );
+
+                total += marks;
+            }
+
+            let average = total / n;
+            let percentage = average;
+
+            let grade, result;
+
+            if (percentage >= 90) {
+                grade = "A+";
+                result = "Pass";
+            }
+            else if (percentage >= 80) {
+                grade = "A";
+                result = "Pass";
+            }
+            else if (percentage >= 70) {
+                grade = "B";
+                result = "Pass";
+            }
+            else if (percentage >= 60) {
+                grade = "C";
+                result = "Pass";
+            }
+            else if (percentage >= 33) {
+                grade = "D";
+                result = "Pass";
+            }
+            else {
+                grade = "F";
+                result = "Fail";
+            }
+
+            document.getElementById("result").innerHTML =
+                "📚 <b>Total Marks:</b> " + total + "<br>" +
+                "🧮 <b>Average Marks:</b> " + average.toFixed(2) + "<br>" +
+                "📊 <b>Percentage:</b> " + percentage.toFixed(2) + "%<br>" +
+                "🏆 <b>Grade:</b> " + grade + "<br>" +
+                "✅ <b>Result:</b> " + result;
+        }
+    </script>
+
+</body>
+</html>
